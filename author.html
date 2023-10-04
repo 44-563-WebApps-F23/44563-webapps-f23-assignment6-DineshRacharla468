@@ -12,7 +12,7 @@
 <input type ="password" id="secret" value="Dickens"> <br>
 <label for="guessAuthor">Guess the author</label>
 <input type ="text" id="guessAuthor"><br>
- <input type="button" onclick="checkAuthor()" value="Check the guess">
+ <input id="author" type="button" onclick="checkAuthor()" value="Check the guess">
 </form>
 <p id="result">Result</p>
 <script> 
@@ -28,35 +28,42 @@ function checkAuthor() {
             oops++;
             alert("Sorry");
         }
+
+        if(oops>6){
+            document.getElementById("author").onclick = Mistake ;
+        }
         
 
         const resultElement = document.getElementById('result');
         resultElement.innerHTML = `Correct Guesses: ${good} | Incorrect Guesses: ${oops}`;
     }
+    function Mistake(){
+        alert("Sorry,ran out of guesses");
+    }
 </script>
     
     <!--Part 4-->
     <div id="image-container">
-        <img id="city-image" src="chalco.jpg" alt="chalco" width="100" height="100" onclick="selectImage()">
+        <img id="city-img" src="chalco.jpg" alt="chalco" width="100" height="100" onclick="selectImage()">
     </div>
 
  <script>
-     let Image = 1;
+     let Img = 1;
     function selectImage(){
-     const cityImg = document.getElementById("city-image");
- switch(Image){
+     const cityImg = document.getElementById("city-img");
+ switch(Img){
      case 1:
-            cityImg.src = "chalco.jpg";
-                Image = 2;
-                 break;
+        cityImg.src = "chalco.jpg";
+        Img = 2;
+        break;
     case 2:
-             cityImg.src = "london.jpg";
-                Image = 3;
-                break;
-                case 3:
-             cityImg.src = "raleigh.jpg";
-                Image = 1;
-                break;
+        cityImg.src = "london.jpg";
+        Img = 3;
+        break;
+    case 3:
+        cityImg.src = "raleigh.jpg";
+            Img = 1;
+            break;
             }
         }
     </script>

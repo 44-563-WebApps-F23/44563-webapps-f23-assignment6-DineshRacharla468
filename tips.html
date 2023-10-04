@@ -10,10 +10,10 @@
 <h1 style="background-color: #94bb9a;">Dinesh Racharla</h1>
 
  <!--part 5 forms-->
- <label for = "base-tip">Enter base amount: </label>
- <input type = "number" id="base-tip" value="50"><br><br>
- <label for ="tip-percentage">Enter the tip percent: </label>
- <input type="number" id="tip-percentage" value="15"><br><br>
+ <label for = "base-amount">Enter base amount: </label>
+ <input type = "number" id="base-amount" value="50"><br><br>
+ <label for ="tip-percent">Enter the tip percent: </label>
+ <input type="number" id="tip-percent" value="15"><br><br>
 
 <!--Part 6 forms-->
  <form>
@@ -26,30 +26,30 @@
 <script>
 //part 5 Script
 function tips(){
- const baseAmt = parseInt(document.getElementById("base-tip").value);
- const tipPer = parseInt(document.getElementById("tip-percentage").value);
+ const base_Amount = parseInt(document.getElementById("base-amount").value);
+ const tip_Percent = parseInt(document.getElementById("tip-percent").value);
  let toShow = "Tips are: ";
  for(let i=0; i<5; i++){
- const calTip = (baseAmt * (tipPer + i *4))/100;
- toShow += `${tipPer + i * 4}% is ${calTip.toFixed(2)}; `;
+ const cal_Tip = (base_Amount * (tip_Percent + i *4))/100;
+ toShow += `${tip_Percent + i * 4}% is ${cal_Tip.toFixed(2)}; `;
             }
  document.getElementById("result").innerHTML = toShow;
         }
  //part 6 Script
  function choose0p(){
-const baseAmount = parseFloat(document.getElementById("base-tip").value);
- const tipPercent = parseFloat(document.getElementById("tip-percentage").value);
+const baseAmount1 = parseFloat(document.getElementById("base-amount").value);
+ const tipPercent2 = parseFloat(document.getElementById("tip-percent").value);
  const selectedOperation = document.querySelector('input[name = "operation"]:checked').value;
 let resultText ="";
  switch(selectedOperation){
                 case "sum":
-                    resultText = `Sum of ${baseAmount} and ${tipPercent} is ${baseAmount + tipPercent}`;
+                    resultText = `Sum of ${baseAmount1} and ${tipPercent2} is ${baseAmount1 + tipPercent2}`;
                     break;
                 case "difference":
-                resultText = `Difference between ${baseAmount} and ${tipPercent} is ${baseAmount - tipPercent}`;
+                resultText = `Difference between ${baseAmount1} and ${tipPercent2} is ${baseAmount1 - tipPercent2}`;
                     break;
                 case "product":
-                    resultText = `Product of ${baseAmount} and ${tipPercent} is ${baseAmount * tipPercent}`;
+                    resultText = `Product of ${baseAmount1} and ${tipPercent2} is ${baseAmount1 * tipPercent2}`;
                     break;
                 default:
                     resultText = "select any one operation";        
